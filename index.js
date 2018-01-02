@@ -8,6 +8,8 @@ bot.telegram.getMe().then((botInfo) => {
     bot.options.username = botInfo.username
 });
 
+bot.use(Telegraf.log());
+
 bot.start((ctx) => {
     console.log('started:', ctx.from.id);
     return ctx.reply('Welcome!')
