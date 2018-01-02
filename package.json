@@ -22,11 +22,12 @@
   },
   "homepage": "https://github.com/RomanIsko/all_countries_bot#readme",
   "dependencies": {
+    "convert-svg-to-png": "^0.3.3",
     "request": "^2.83.0",
     "request-promise": "^4.2.2",
     "telegraf": "^3.17.2"
   },
-  "env":{
+  "env": {
     "BOT_TOKEN": "@bot_token"
   }
 }
