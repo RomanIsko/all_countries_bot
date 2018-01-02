@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "micro-bot -d ${NOW_URL}",
-    "dev": "nodemon --exec 'micro-bot -e '.env.dev''"
+    "dev": "nodemon --exec 'micro-bot -e '.env''"
   },
   "repository": {
     "type": "git",
