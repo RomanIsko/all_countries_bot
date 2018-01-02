@@ -9,9 +9,11 @@ bot.command('start', (ctx) => {
     return ctx.reply('Welcome!')
 });
 
-bot.command('help', (ctx) => ctx.reply('TODO: here will be help message'));
+bot.command('help', (ctx) => ctx.reply(
+    '/s [country name] - Search country with the pattern\n' +
+    '/help - display this help message'));
 
-bot.hears(/\/s (.+)/, ({match, reply}) => {
+bot.hears(/\/s(.+)/, ({match, reply}) => {
     if (match[1].length < 2) {
         return reply('Please provide at least 2 chars')
     }
