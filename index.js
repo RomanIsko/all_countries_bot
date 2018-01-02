@@ -28,7 +28,7 @@ bot.hears(/\/s (.+)/, ({match, reply}) => {
             for (let country of resp) {
                 keyboard.push(Markup.callbackButton(country.name, `c:${country.alpha3Code}`));
             }
-            reply('Please choose a country:',
+            return reply('Please choose a country:',
                 Markup.inlineKeyboard(keyboard, {columns: 2}).extra()
             )
         })
@@ -47,8 +47,9 @@ bot.action(/c:.+/, (ctx) => {
             rp(resp.flag)
                 .then(svgResp =>
                     svg2png(svgResp)
-                        .then(png =>
-                            ctx.replyWithPhoto({source: png})
+                        .then(png => {
+                                return ctx.replyWithPhoto({source: png})
+                            }
                         ))
         })
         .catch(err => console.log(err));
