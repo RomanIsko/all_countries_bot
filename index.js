@@ -13,14 +13,13 @@ bot.command('help', (ctx) => ctx.reply(
     '/s [country name] - Search country with the pattern\n' +
     '/help - display this help message'));
 
-bot.hears(/\/s(.+)/, ({match, reply}) => {
+bot.hears(/\/s (.+)/, ({match, reply}) => {
     if (match[1].length < 2) {
         return reply('Please provide at least 2 chars')
     }
     rp({
-        method: 'GET',
-        uri   : 'https://restcountries.eu/rest/v2/name/' + match[1] + '?fields=name;alpha3Code',
-        json  : true
+        uri : 'https://restcountries.eu/rest/v2/name/' + match[1] + '?fields=name;alpha3Code',
+        json: true
     })
         .then(resp => {
             let keyboard = [];
@@ -42,7 +41,11 @@ bot.action(/c:.+/, (ctx) => {
         json  : true
     })
         .then(resp => {
-            ctx.reply(resp.capital);
+            ctx.replyWithMarkdown(`*Capital:* ${resp.capital}`);
+            ctx.replyWithMarkdown(`*Region:* ${resp.region} (${resp.subregion})`);
+            ctx.replyWithMarkdown(`*Population:* ${resp.population}`);
+            ctx.replyWithMarkdown(`*Area:* ${resp.area} square kms`);
+            ctx.replyWithMarkdown(`*Native name:* ${resp.nativeName}`);
             rp(resp.flag)
                 .then(svgResp =>
                     svg2png(svgResp)
