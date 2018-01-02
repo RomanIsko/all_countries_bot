@@ -1,14 +1,9 @@
-const Telegraf = require('telegraf');
-const rp       = require('request-promise');
-const bot      = new Telegraf(process.env.BOT_TOKEN);
-const Markup   = require('telegraf/markup');
-const svg2png  = require('svg2png');
+const {Composer, Markup} = require('micro-bot');
+const rp                 = require('request-promise');
+const svg2png            = require('svg2png');
+const bot                = new Composer();
 
-bot.telegram.getMe().then((botInfo) => {
-    bot.options.username = botInfo.username
-});
-
-bot.use(Telegraf.log());
+bot.use(Composer.log());
 
 bot.start((ctx) => {
     console.log('started:', ctx.from.id);
@@ -57,4 +52,4 @@ bot.action(/c:.+/, (ctx) => {
         .catch(err => console.log(err));
 });
 
-bot.startPolling();
+module.exports = bot;
