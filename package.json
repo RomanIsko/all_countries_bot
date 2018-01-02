@@ -22,9 +22,9 @@
   },
   "homepage": "https://github.com/RomanIsko/all_countries_bot#readme",
   "dependencies": {
-    "convert-svg-to-png": "^0.3.3",
     "request": "^2.83.0",
     "request-promise": "^4.2.2",
+    "svg2png": "^4.1.1",
     "telegraf": "^3.17.2"
   },
   "env": {

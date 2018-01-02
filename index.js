@@ -1,8 +1,8 @@
-const Telegraf  = require('telegraf');
-const rp        = require('request-promise');
-const bot       = new Telegraf(process.env.BOT_TOKEN);
-const Markup    = require('telegraf/markup');
-const {convert} = require('convert-svg-to-png');
+const Telegraf = require('telegraf');
+const rp       = require('request-promise');
+const bot      = new Telegraf(process.env.BOT_TOKEN);
+const Markup   = require('telegraf/markup');
+const svg2png  = require('svg2png');
 
 bot.telegram.getMe().then((botInfo) => {
     bot.options.username = botInfo.username
@@ -46,7 +46,7 @@ bot.action(/c:.+/, (ctx) => {
             ctx.reply(resp.capital);
             rp(resp.flag)
                 .then(svgResp =>
-                    convert(svgResp)
+                    svg2png(svgResp)
                         .then(png =>
                             ctx.replyWithPhoto({source: png})
                         ))
