@@ -1,0 +1,29 @@
+{
+  "name": "all_countries_bot",
+  "version": "1.0.0",
+  "description": "Telegram bot that provides information about countries",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RomanIsko/all_countries_bot.git"
+  },
+  "keywords": [
+    "telegram",
+    "bot"
+  ],
+  "author": "Roman Isko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RomanIsko/all_countries_bot/issues"
+  },
+  "homepage": "https://github.com/RomanIsko/all_countries_bot#readme",
+  "dependencies": {
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2",
+    "telegraf": "^3.17.2"
+  }
+}
