@@ -1,3 +1,4 @@
 node_modules/
 .idea/
 all_countries_bot.iml
+.env
