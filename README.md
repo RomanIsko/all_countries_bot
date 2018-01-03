@@ -5,7 +5,7 @@
 ### Development
 * Create `.env` file with `BOT_TOKEN` variable
   ```sh
-  BOT_TOKEN_DEV=BOT_TOKEN=11111111:AAAAAAAAAAAAAAAAAAAAAAAAAAA
+  BOT_TOKEN=11111111:AAAAAAAAAAAAAAAAAAAAAAAAAAA
   ```
 * Install NodeJS dependencies
   ```sh
