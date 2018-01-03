@@ -6,8 +6,8 @@
   "scripts": {
     "start": "micro-bot -d ${NOW_URL}",
     "dev": "nodemon --exec 'micro-bot -e '.env''",
-    "deploy": "./node_modules/.bin/now -e NODE_ENV=production -e BOT_TOKEN=${BOT_TOKEN} --token $NOW_TOKEN --npm",
-    "alias": "./node_modules/.bin/now alias --token=$NOW_TOKEN"
+    "deploy": "./node_modules/.bin/now -e BOT_TOKEN=$TG_BOT_TOKEN --token $NOW_TOKEN --npm --public",
+    "alias": "./node_modules/.bin/now alias --token $NOW_TOKEN"
   },
   "repository": {
     "type": "git",
