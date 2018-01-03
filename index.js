@@ -30,7 +30,14 @@ bot.hears(/\/s (.+)/, ({match, reply}) => {
                 Markup.inlineKeyboard(keyboard, {columns: 2}).extra()
             )
         })
-        .catch(err => console.log(err))
+        .catch(err => {
+            if (err.statusCode === 404) {
+                reply('Oops, country not found');
+            } else {
+                reply('Oops, something  is wrong');
+            }
+            console.log(err)
+        })
 });
 
 bot.action(/c:.+/, (ctx) => {
