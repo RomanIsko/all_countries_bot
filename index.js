@@ -50,8 +50,8 @@ bot.action(/c:.+/, (ctx) => {
         .then(resp => {
             ctx.replyWithMarkdown(`*Capital:* ${resp.capital}`);
             ctx.replyWithMarkdown(`*Region:* ${resp.region} (${resp.subregion})`);
-            ctx.replyWithMarkdown(`*Population:* ${resp.population}`);
-            ctx.replyWithMarkdown(`*Area:* ${resp.area} square kms`);
+            ctx.replyWithMarkdown(`*Population:* ${resp.population.toLocaleString()}`);
+            ctx.replyWithMarkdown(`*Area:* ${resp.area.toLocaleString()} square kilometers`);
             ctx.replyWithMarkdown(`*Native name:* ${resp.nativeName}`);
             rp(resp.flag)
                 .then(svgResp =>
