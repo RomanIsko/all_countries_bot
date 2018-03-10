@@ -25,14 +25,14 @@
   },
   "homepage": "https://github.com/RomanIsko/all_countries_bot#readme",
   "dependencies": {
-    "micro-bot": "^2.2.0",
-    "request": "^2.83.0",
-    "request-promise": "^4.2.2",
-    "svg2png": "^4.1.1"
+    "micro-bot": "^2.2.x",
+    "request": "^2.83.x",
+    "request-promise": "^4.2.x",
+    "svg2png": "^4.1.x"
   },
   "devDependencies": {
-    "nodemon": "^1.12.0",
-    "now": "^9.0.1"
+    "nodemon": "^1.x",
+    "now": "^10.x"
   },
   "now": {
     "name": "all_countries_bot",
