@@ -72,7 +72,10 @@ bot.action(/c:.+/, (ctx) => {
               }
             ))
     })
-    .catch(err => console.log(err))
+    .catch(err => {
+      logger.log(err)
+      console.log(err)
+    })
 })
 
 module.exports = bot
