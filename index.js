@@ -17,6 +17,10 @@ bot.use((ctx, next) => {
 })
 
 bot.command('start', (ctx) => {
+  rp({
+    uri: 'https://restcountries.eu/rest/v2/name/france',
+    json: true
+  }).then(response => ctx.reply(JSON.stringify(response)))
   return ctx.reply('Welcome!')
 })
 
