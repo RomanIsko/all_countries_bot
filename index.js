@@ -1,7 +1,7 @@
 const {Composer, Markup} = require('micro-bot')
-const rp                 = require('request-promise')
-const svg2png            = require('svg2png')
-const bot                = new Composer()
+const rp = require('request-promise')
+const svg2png = require('svg2png')
+const bot = new Composer()
 const logger = require('logzio-nodejs').createLogger({
   token: process.env.LOGZIO_TOKEN,
   host: 'listener.logz.io',
@@ -29,7 +29,7 @@ bot.hears(/\/s (.+)/, ({match, reply}) => {
     return reply('Please provide at least 2 chars')
   }
   rp({
-    uri : 'https://restcountries.eu/rest/v2/name/' + match[1] + '?fields=name;alpha3Code',
+    uri: 'https://restcountries.eu/rest/v2/name/' + match[1] + '?fields=name;alpha3Code',
     json: true
   })
     .then(resp => {
@@ -55,8 +55,8 @@ bot.action(/c:.+/, (ctx) => {
   let countryCode = ctx.match[0].replace('c:', '')
   rp({
     method: 'GET',
-    uri   : `https://restcountries.eu/rest/v2/alpha/${countryCode}`,
-    json  : true
+    uri: `https://restcountries.eu/rest/v2/alpha/${countryCode}`,
+    json: true
   })
     .then(resp => {
       ctx.replyWithMarkdown(`*Capital:* ${resp.capital}`)
