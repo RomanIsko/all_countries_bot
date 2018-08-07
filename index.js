@@ -30,7 +30,11 @@ bot.hears(/\/s (.+)/, ({match, reply}) => {
   }
   rp({
     uri: 'https://restcountries.eu/rest/v2/name/' + match[1] + '?fields=name;alpha3Code',
-    json: true
+    json: true,
+    headers: {
+      'User-Agent': 'all_countries_bot',
+      'Host': 'restcountries.eu'
+    }
   })
     .then(resp => {
       logger.log(resp)
