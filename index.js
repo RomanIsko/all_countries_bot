@@ -2,19 +2,8 @@ const {Composer, Markup} = require('micro-bot')
 const rp = require('request-promise')
 const svg2png = require('svg2png')
 const bot = new Composer()
-const logger = require('logzio-nodejs').createLogger({
-  token: process.env.LOGZIO_TOKEN,
-  host: 'listener.logz.io',
-  type: process.env.NODE_ENV === 'prod' || process.env.NODE_ENV === 'production' ? 'all_countries_bot' : 'all_countries_bot_dev'
-})
-//
+
 bot.use(Composer.log())
-// register logz.io and console loggers
-bot.use((ctx, next) => {
-  return next(ctx).then(() => {
-    logger.log(ctx.message)
-  })
-})
 
 bot.command('start', (ctx) => {
   return ctx.reply('Welcome!')
@@ -37,7 +26,7 @@ bot.hears(/\/s (.+)/, ({match, reply}) => {
     }
   })
     .then(resp => {
-      logger.log(resp)
+      console.log(resp)
       let keyboard = []
       for (let country of resp) {
         keyboard.push(Markup.callbackButton(country.name, `c:${country.alpha3Code}`))
