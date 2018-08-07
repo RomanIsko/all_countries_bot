@@ -33,6 +33,7 @@ bot.hears(/\/s (.+)/, ({match, reply}) => {
     json: true
   })
     .then(resp => {
+      logger.log(resp)
       let keyboard = []
       for (let country of resp) {
         keyboard.push(Markup.callbackButton(country.name, `c:${country.alpha3Code}`))
