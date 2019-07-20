@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "nodemon": "^1.x",
-    "now": "^11.x"
+    "now": "^12.x"
   },
   "now": {
     "name": "all_countries_bot",
