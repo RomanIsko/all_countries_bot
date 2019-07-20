@@ -6,9 +6,9 @@
   "scripts": {
     "start": "micro-bot -d ${NOW_URL}",
     "dev": "nodemon --exec 'micro-bot -e '.env''",
-    "down": "./node_modules/.bin/now rm all_countries_bot --token $NOW_TOKEN --yes",
-    "deploy": "./node_modules/.bin/now -e BOT_TOKEN=$TG_BOT_TOKEN -e NODE_ENV=prod --token $NOW_TOKEN --npm --public --regions bru",
-    "alias": "./node_modules/.bin/now alias --token $NOW_TOKEN"
+    "down": "now rm all_countries_bot --token $NOW_TOKEN --yes",
+    "deploy": "now -e BOT_TOKEN=$TG_BOT_TOKEN -e NODE_ENV=prod --token $NOW_TOKEN --public --regions bru",
+    "alias": "now alias --token $NOW_TOKEN"
   },
   "repository": {
     "type": "git",
