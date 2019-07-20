@@ -12,18 +12,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RomanIsko/all_countries_bot.git"
+    "url": "git+https://github.com/sturman/all_countries_bot.git"
   },
   "keywords": [
     "telegram",
     "bot"
   ],
-  "author": "Roman Isko",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/RomanIsko/all_countries_bot/issues"
+    "url": "https://github.com/sturman/all_countries_bot/issues"
   },
-  "homepage": "https://github.com/RomanIsko/all_countries_bot#readme",
+  "homepage": "https://github.com/sturman/all_countries_bot#readme",
   "dependencies": {
     "micro-bot": "^2.2.x",
     "request": "^2.87.x",
